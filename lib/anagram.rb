@@ -8,9 +8,9 @@ class String
       if vowel_word !~ /[aeiouy]/
         "Please enter in an actual word"
       elsif split_letters == split_letters.reverse
-        "These words are a palindrome"
+        "These words are palindromes"
       elsif word1.chars.sort == word2.chars.sort
-      "These words are an anagram"
+      "These words are anagrams"
       elsif word1.chars.sort != word2.chars.sort
         "This is an antigram"
       else
