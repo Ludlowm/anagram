@@ -4,7 +4,7 @@ class String
     word1=split_word[0]
     word2 = split_word[1]
     if word1.chars.sort == word2.chars.sort
-      puts "these words are anagrams"
+      "these words are anagrams"
     end
   end
 end
