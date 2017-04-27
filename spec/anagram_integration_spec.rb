@@ -3,15 +3,12 @@ require('./app')
 Capybara.app = Sinatra::Application
 set(:show_exceptions, false)
 
-
-
-describe('word to palindrome', {:type => :feature}) do
-
-  it('processes the words the user entered to find if they are an anagram/palindrome or neither') do
+describe('anagram', {:type => :feature}) do
+  it('tells user if their word is an anagram') do
     visit('/')
-    fill_in('input', :with => 'ruby bury')
-    click_button('Go!')
-    expect(page).to have_content('These words are anagrams')
-
+    fill_in('anagrams1', :with => "bury")
+    fill_in('anagrams2', :with => "ruby")
+    click_button('click here')
+    expect(page).to have_content("These words are anagrams")
   end
 end

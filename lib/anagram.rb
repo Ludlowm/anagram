@@ -1,20 +1,24 @@
 class String
-  def anagram
+  def anagram?(input)
     vowel_word = self.downcase
-    split_word = self.downcase.split(" ").to_a
-    split_letters = self.downcase.split("").to_a
-    word1 = split_word[0]
-    word2 = split_word[1]
+    letters_array = self.gsub(/[^a-zA-Z]/, '').downcase.split("")
+    second_array = input.gsub(/[^a-zA-Z]/, '').downcase.split("")
+    word1 = letters_array.sort
+    word2 = second_array.sort
+    empty_array = []
       if vowel_word !~ /[aeiouy]/
         "Please enter in an actual word"
-      elsif split_letters == split_letters.reverse
+      elsif ((letters_array) == (letters_array)) && ((letters_array) == (second_array.reverse))
         "These words are palindromes"
-      elsif word1.chars.sort == word2.chars.sort
-      "These words are anagrams"
-      elsif word1.chars.sort != word2.chars.sort
+      elsif word1 == word2
+        "These words are anagrams"
+      elsif
+        input.split('').each do |letter|
+          empty_array.push(self.include?(letter))
+
+      end
+      !(empty_array.include?(true))
         "This is an antigram"
-      else
-        "You don't have an anagram"
     end
   end
 end
